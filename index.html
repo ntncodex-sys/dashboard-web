@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Dashboard Web</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+
+    <div class="layout">
+
+        <header class="header">
+            <div class="logo">
+                <img class="image-logo" src="public/images/bn.webp">
+            </div>
+    
+            <nav class="header-nav">
+                <a href="#" class="nav-link" data-page="dashboard">
+                    Home
+                </a>
+    
+                <a href="#" class="nav-link" data-page="courses">
+                    Courses
+                </a>
+    
+                <a href="#" class="nav-link" data-page="about">
+                    About
+                </a>
+    
+                <a href="#" class="nav-link" data-page="contact">
+                    Contact
+                </a>
+            </nav>
+    
+            <div class="user-area">
+                
+                <img src="public/images/images.png" class="user-avatar">
+
+                <button class="user-button">
+                    <p>Username</p>
+                    <span class="user-chevron">▼</span>
+                </button>
+        
+                <div class="user-dropdown">
+                    <a href="#" class="user-link">
+                        👤 Profile
+                    </a>
+        
+                    <a href="#" class="user-link">
+                        🚪 Logout
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <aside class="sidebar">
+
+            <div class="search">
+                <input type="text" placeholder="Search...">
+                <span class="search-icon">🔍</span>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="#" class="sidebar-link active" data-page="dashboard">
+                    <span class="sidebar-icon">🏠</span>
+                    <span class="sidebar-text">Dashboard</span>
+                </a>
+                
+                <a href="#" class="sidebar-link" data-page="my-courses">
+                    <span class="sidebar-icon">📚</span>
+                    <span class="sidebar-text">My Courses</span>
+                </a>
+                
+                <a href="#" class="sidebar-link" data-page="progress">
+                    <span class="sidebar-icon">📊</span>
+                    <span class="sidebar-text">Progress</span>
+                    <span class="badge">3</span>
+                </a>
+                
+                <a href="#" class="sidebar-link" data-page="setting">
+                    <span class="sidebar-icon">⚙️</span>
+                    <span class="sidebar-text">Setting</span>
+                </a>
+            </nav>
+
+            <div class="actions">
+
+                <label class="theme-switch" for="theme-toggle">
+
+                    <input type="checkbox" id="theme-toggle">
+
+                    <span class="switch-track">
+                        <span class="switch-thumb">
+                            <span class="theme-icon" id="theme-icon">☀️</span>
+                        </span>
+                    </span>
+                </label>
+                
+                <button class="action-button">
+                    🔔
+                </button>
+
+                <button class="action-button">
+                    ⚙️
+                </button>
+
+                <button class="action-button">
+                    🚪
+                </button>
+            </div>
+        </aside>
+
+        <main class="main-content" id="main-content">
+
+        </main>
+    </div>
+
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>

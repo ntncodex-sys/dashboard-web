@@ -1,0 +1,86 @@
+const pageLinks = document.querySelectorAll("[data-page]");
+
+pageLinks.forEach(function(link) {
+
+    link.addEventListener("click", function(event) {
+
+        event.preventDefault();
+
+        const pageName = link.dataset.page;
+
+        loadPage(pageName);
+
+        if(link.classList.contains("sidebar-link")) {
+
+            const sidebarLinks = document.querySelectorAll(".sidebar-link");
+
+            sidebarLinks.forEach(function(item) {
+                item.classList.remove("active");
+            })
+            
+            link.classList.add("active");
+        }
+
+    });
+
+});
+
+
+const pageLinks = document.querySelectorAll("[data-page]");
+
+function updateActiveSidebar(pageName) {
+
+    const sidebarLinks = document.querySelectorAll(".sidebar-link");
+
+    sidebarLinks.forEach(function(item) {
+        item.classList.remove("active");
+    });
+
+    const activeLink = document.querySelector(
+        `.sidebar-link[data-page="${pageName}"]`
+    );
+
+    if (activeLink) {
+        activeLink.classList.add("active");
+    }
+}
+
+pageLinks.forEach(function(link) {
+    link.addEventListener("click", function(event) {
+        event.preventDefault();
+
+        const pageName = link.dataset.page;
+
+        loadPage(pageName);
+
+        updateActiveSidebar(pageName);
+    });
+});
+
+loadPage("dashboard");
+updateActiveSidebar("dashboard");
+
+const themeToggle = document.getElementById("theme-toggle");
+const themeIcon = document.getElementById("theme-icon");
+
+const savedTheme = localStorage.getItem("theme");
+
+if (savedTheme === "dark") {
+    document.body.classList.add("dark-mode");
+    themeToggle.checked = true;
+}
+
+function updateTheme() {
+    if (themeToggle.checked) {
+        document.body.classList.add("dark-mode");
+        localStorage.setItem("theme", "dark");
+        themeIcon.textContent = "🌙";
+    } else {
+        document.body.classList.remove("dark-mode");
+        localStorage.setItem("theme", "light");
+        themeIcon.textContent = "☀️";
+    }
+}
+
+updateTheme();
+themeToggle.addEventListener("change", updateTheme);
